@@ -19,7 +19,7 @@ router.get('/', async (req, res, next) => {
         // Task 4: return the gifts using the res.json method
         res.json(gifts);
     } catch (e) {
-        logger.console.error('oops something went wrong', e)
+        logger.error('oops something went wrong', e)
         next(e);
     }
 });
@@ -55,7 +55,8 @@ router.post('/', async (req, res, next) => {
         const collection = db.collection("gifts");
         const gift = await collection.insertOne(req.body);
 
-        res.status(201).json(gift.ops[0]);
+        const result = await collection.insertOne(req.body);
+        res.status(201).json({ ...req.body, _id: result.insertedId });
     } catch (e) {
         next(e);
     }
