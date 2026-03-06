@@ -27,7 +27,6 @@ const giftRoutes = require('./routes/giftRoutes');
 const searchRoutes = require('./routes/searchRoutes');
 
 const pinoHttp = require('pino-http');
-const logger = require('./logger');
 
 app.use(pinoHttp({ logger }));
 
