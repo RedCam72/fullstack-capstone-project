@@ -23,7 +23,7 @@ function RegisterPage() {
     const handleRegister = async () => {
         const response = await fetch(`${urlConfig.backendUrl}/api/auth/register`, {
             //Step 1 - Task 6
-            method: 'POST'
+            method: 'POST',
             //Step 1 - Task 7
             headers: {
         		'content-type': 'application/json',
@@ -67,7 +67,7 @@ function RegisterPage() {
 
                         {/* insert code here to create input elements for all the variables - firstName, lastName, email, password */}
                         <div className="mb-3">
-                            <label htmlFor="firstName" className="form label">First Name</label>
+                            <label htmlFor="firstName" className="form-label">First Name</label>
                             <input
                                 id="firstName"
                                 type="text"
@@ -79,7 +79,7 @@ function RegisterPage() {
                         </div>
                         {/* last name */}
                         <div className="mb-3">
-                            <label htmlFor="lastName" className="form label">Last Name</label>
+                            <label htmlFor="lastName" className="form-label">Last Name</label>
                             <input
                                 id="lastName"
                                 type="text"
@@ -91,7 +91,7 @@ function RegisterPage() {
                         </div>
                         {/* email */}                  
                         <div className="mb-3">
-                            <label htmlFor="email" className="form label">Email</label>
+                            <label htmlFor="email" className="form-label">Email</label>
                             <input
                                 id="email"
                                 type="text"
@@ -105,7 +105,7 @@ function RegisterPage() {
                         </div>
                         {/* password */}
                         <div className="mb-4">
-                            <label htmlFor="password" className="form label">Password</label>
+                            <label htmlFor="password" className="form-label">Password</label>
                             <input
                                 id="password"
                                 type="password"
