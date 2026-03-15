@@ -23,7 +23,7 @@ function RegisterPage() {
     const handleRegister = async () => {
         const response = await fetch(`${urlConfig.backendUrl}/api/auth/register`, {
             //Step 1 - Task 6
-            method: ‘POST’
+            method: 'POST'
             //Step 1 - Task 7
             headers: {
         		'content-type': 'application/json',
