@@ -56,7 +56,8 @@ router.post('/', async (req, res, next) => {
         const gift = await collection.insertOne(req.body);
 
         const result = await collection.insertOne(req.body);
-        res.status(201).json({ ...req.body, _id: result.insertedId });
+        const responseBody = Object.assign({}, req.body, { _id: result.insertedID });
+        res.status(201).json(responseBody);
     } catch (e) {
         next(e);
     }
