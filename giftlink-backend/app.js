@@ -1,11 +1,9 @@
-/*jshint esversion: 6 */
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const pinoLogger = require('./logger');
 
 const connectToDatabase = require('./models/db');
-const {loadData} = require("./util/import-mongo/index");
 
 const app = express();
 app.use("*",cors());
@@ -30,7 +28,6 @@ const authRoutes = require('./routes/authRoutes');
 const searchRoutes = require('./routes/searchRoutes');
 
 const pinoHttp = require('pino-http');
-const logger = require('./logger');
 
 app.use(pinoHttp({ logger }));
 
@@ -46,6 +43,7 @@ app.use('/api/search', searchRoutes);
 
 // Global Error Handler
 app.use((err, req, res, next) => {
+    void next;
     console.error(err);
     res.status(500).send('Internal Server Error');
 });
